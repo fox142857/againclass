@@ -1,0 +1,99 @@
+/* index.css */
+
+/* 主要内容容器 */
+.container {
+  width: 1200px;
+  margin: 20px auto;
+}
+
+/* “购买商品”大按钮 */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.goods-link {
+  font-size: 24px;
+  font-weight: 700;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: skyblue;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.goods-link:hover {
+  background-color: deepskyblue;
+  transform: scale(1.05);
+}
+.goods-link:active {
+  background-color: dodgerblue;
+  transform: scale(1);
+}
+
+/* 轮播图：放大1.5倍，并在鼠标未进入时隐藏左右按钮 */
+.swiper {
+  width: 450px;
+  height: 287px;
+  margin: 20px auto;
+  transform: scale(1.5);
+  transform-origin: top center; /* 放大中心点为上方 */
+  position: relative;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide img {
+  display: block;
+  width: 450px;
+  height: 287px;
+}
+
+/* 默认隐藏左右按钮，鼠标悬浮到轮播区域才显示 */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* 让箭头居中 */
+  text-align: center;
+  line-height: 40px;
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  display: flex; /* flex让::after可居中 */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swiper按钮背景 */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px;
+  color: #fff;
+  /* 让图标在按钮区域中间 */
+  line-height: 1;
+}
+
+/* Swiper分页器 */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.7;
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+}

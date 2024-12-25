@@ -1,0 +1,125 @@
+/* detail.css */
+
+/* 面包屑 */
+.breadcrumb {
+  margin: 20px auto;
+  width: 1200px;
+  font-size: 14px;
+}
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: #409eff;
+}
+
+/* 商品详情容器 */
+.goods-detail {
+  width: 1200px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 30px;
+}
+
+/* 商品预览区 */
+.goods-preview {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.goods-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* 商品信息区 */
+.goods-info {
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+.goods-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.price-box {
+  background: #fff5f5;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.price-label {
+  color: #666;
+}
+.current-price {
+  color: #ff4d4f;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.original-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+.discount {
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.goods-meta {
+  background: white;
+  padding: 15px;
+  border-radius: 4px;
+}
+.meta-item {
+  margin-bottom: 10px;
+}
+.meta-label {
+  color: #666;
+  margin-right: 10px;
+}
+.meta-value {
+  color: #333;
+}
+.hot-tag {
+  display: inline-block;
+  background: #ff4d4f;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* 商品详情内容 */
+.goods-detail-content {
+  grid-column: 1 / -1;
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+.goods-detail-content h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.detail-content {
+  color: #666;
+  line-height: 1.8;
+}
+.detail-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}

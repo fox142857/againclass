@@ -1,0 +1,248 @@
+/* list.css */
+
+/* 头部 */
+.header {
+  justify-content: center;
+}
+#backHome {
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  padding: 5px 12px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  color: skyblue;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+#backHome:hover {
+  background-color: #eee;
+  color: #333;
+}
+
+/* 底部 */
+.footer {
+  height: 300px;
+  background-color: skyblue;
+  display: flex;
+  font-size: 100px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* 内容容器宽度统一 */
+.container {
+  width: 1200px;
+  margin: 20px auto;
+}
+
+/* 筛选部分 */
+.filter {
+  border: 1px solid #333;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.cateBox {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+.cateBox > p {
+  width: 80px;
+  text-align: right;
+  margin-right: 10px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.cateBox > ul {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* 分类标签颜色改淡 (#eee) */
+.cateBox > ul > li {
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.cateBox > ul > li.active,
+.cateBox > ul > li:hover {
+  background-color: pink;
+  color: #fff;
+}
+/* 搜索框 left 对齐 + 取消按钮 */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search {
+  width: 250px;
+  font-size: 16px;
+  height: 35px;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+.cancelBtn {
+  cursor: pointer;
+  padding: 6px 12px;
+  background-color: #87CEEB;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.cancelBtn:hover {
+  opacity: 0.9;
+}
+
+/* 分页部分 */
+.pagination {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #333;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.pagination > span {
+  padding: 5px 15px;
+  background-color: skyblue;
+  color: #fff;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.pagination > span.disable {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.pagination > p {
+  margin: 0 10px;
+}
+.pagination > input {
+  height: 30px;
+  text-align: center;
+  width: 50px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.pagination > button {
+  padding: 5px 10px;
+  height: 34px;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: skyblue;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.pagination > button:hover {
+  background-color: deepskyblue;
+}
+.pagination > select {
+  padding: 5px 10px;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 商品列表 */
+.list {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.list > li {
+  width: 290px;
+  border: 1px solid #333;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.list > li:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.show {
+  width: 100%;
+  height: 290px;
+  position: relative;
+  pointer-events: none;
+}
+.show img {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.show > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  background-color: orange;
+  color: #fff;
+  font-size: 14px;
+  border-bottom-left-radius: 10px;
+}
+.show > span.hot {
+  right: 60px;
+  background-color: red;
+}
+.info {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title {
+  font-size: 20px;
+  line-height: 1.4;
+  max-height: 4.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: box;
+  box-orient: vertical;
+  line-clamp: 3;
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.price .old {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+}
+.price .curr {
+  font-size: 20px;
+  color: #e60000;
+  font-weight: bold;
+}

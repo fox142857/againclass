@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>个人中心</title>
+  <!-- 引入通用样式及本页样式 -->
+  <link rel="stylesheet" href="../css/uni.css" />
+  <link rel="stylesheet" href="../css/self.css" />
+  <!-- axios -->
+  <script src="../lib/axios.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <!-- 返回上一页按钮 -->
+    <button class="back-btn" onclick="window.history.back()"> &lt; </button>
+    <div class="header-title">个人中心</div>
+    <!-- 新增“修改密码”按钮，位于右上角 -->
+    <button
+      class="change-pwd-btn"
+      id="changePwdBtn"
+      style="
+        position: absolute;
+        right: 20px;
+        background: none;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      "
+    >
+      修改密码
+    </button>
+  </header>
+
+  <!-- 修改个人信息的表单，位于页面居中 -->
+  <div class="form-container info-box">
+    <form id="formInfo">
+      <div class="form-item">
+        <label>用户名：</label>
+        <input type="text" class="username" disabled />
+      </div>
+      <div class="form-item">
+        <label>年 龄：</label>
+        <input type="text" class="age" />
+      </div>
+      <div class="form-item">
+        <label>性 别：</label>
+        <select class="gender">
+          <option value="">请选择</option>
+          <option value="男">男</option>
+          <option value="女">女</option>
+        </select>
+      </div>
+      <div class="form-item">
+        <label>昵 称：</label>
+        <input type="text" class="nickname" />
+      </div>
+      <button type="submit" class="submit-btn">确认修改个人信息</button>
+    </form>
+  </div>
+
+  <!-- 返回首页按钮 -->
+  <div class="footer-btn">
+    <button id="backHomeBtn" class="home-btn">返回首页</button>
+  </div>
+
+  <!-- 引入本页的 JS 文件 -->
+  <script src="../js/self.js"></script>
+</body>
+</html>

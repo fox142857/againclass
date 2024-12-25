@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>登录页面</title>
+  <link rel="stylesheet" href="../css/uni.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <script src="../lib/axios.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <!-- 返回上一页按钮 -->
+    <button class="back-btn" onclick="window.history.back()"> &lt; </button>
+    <div class="header-title">登录页面</div>
+  </header>
+
+  <div class="form-container">
+    <form id="loginForm">
+      <div class="form-item">
+        <label>用户名：</label>
+        <input type="text" id="username" name="username" />
+      </div>
+      <div class="form-item">
+        <label>密 码：</label>
+        <input type="password" id="password" name="password" />
+      </div>
+      <div class="form-item" style="font-size:14px;margin-top:10px;">
+        还没账号，<a href="register.html" style="color:#87CEEB;">去注册</a>
+      </div>
+      <button type="submit" class="submit-btn">登录</button>
+    </form>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

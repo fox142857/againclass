@@ -1,0 +1,135 @@
+/* uni.css -- 各页面通用的全局样式及公共组件 */
+
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 去掉 ul/ol 默认的黑点/数字 */
+ul, ol {
+  list-style: none;
+}
+/* 去掉 a 的默认下划线，保持文字颜色 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  opacity: 0.8;
+}
+/* 图片默认占位与自适应 */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* body 去除默认外边距，让头部直接贴顶 */
+html, body {
+  height: 100%;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+/* 通用头部（统一） */
+.header {
+  position: relative;
+  height: 60px;
+  background-color: skyblue;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; 
+}
+.header-title {
+  margin: 0 auto;
+  font-size: 24px;
+}
+/* 返回上一页按钮 */
+.back-btn {
+  position: absolute;
+  left: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.back-btn:hover {
+  opacity: 0.8;
+}
+/* 用户信息块 */
+.user-info {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.login-link,
+.user-center {
+  color: #fff;
+}
+.logout-btn {
+  cursor: pointer;
+  padding: 3px 10px;
+}
+
+/* 通用表单容器 */
+.form-container {
+  width: 400px;
+  margin: 50px auto;
+  border: 1px solid #ffd6d6;
+  border-radius: 5px;
+  padding: 30px;
+  background-color: #fff;
+}
+/* 通用表单项 */
+.form-item {
+  margin-bottom: 20px;
+}
+.form-item label {
+  display: inline-block;
+  width: 80px;
+  text-align: left;
+  margin-right: 10px;
+}
+.form-item input,
+.form-item select {
+  width: 280px;
+  height: 35px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.form-item input:focus,
+.form-item select:focus {
+  border-color: #87CEEB;
+  outline: none;
+}
+.form-item input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+/* 通用提交按钮 */
+.submit-btn {
+  width: 100%;
+  height: 40px;
+  background: #87CEEB;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* 公共footer-btn容器 */
+.footer-btn {
+  text-align: center;
+  margin-top: 20px;
+}

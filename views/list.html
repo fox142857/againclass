@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>商品列表</title>
+  <link rel="stylesheet" href="../css/uni.css" />
+  <link rel="stylesheet" href="../css/list.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../lib/axios.min.js"></script>
+  <script src="../lib/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <!-- 返回上一页按钮 -->
+    <button class="back-btn" onclick="window.history.back()"> &lt; </button>
+    <h2 class="header-title">商品列表</h2>
+    <!-- 返回首页按钮 -->
+    <button id="backHome">返回首页</button>
+  </header>
+
+  <!-- 筛选区域：与原先类似，但只让第一个标签和搜索框左对齐即可 -->
+  <div class="filter container">
+    <!-- 与之前保持同样的排列方式 -->
+    <div class="cateBox">
+      <p>分类</p>
+      <ul class="category">
+        <li class="active">全部</li>
+        <!-- 分类通过JS动态加载 -->
+      </ul>
+    </div>
+    <div class="cateBox">
+      <p>筛选</p>
+      <ul class="filterBox typeBox">
+        <li data-type="" class="active">全部</li>
+        <li data-type="hot">热销</li>
+        <li data-type="sale">折扣</li>
+      </ul>
+    </div>
+    <div class="cateBox">
+      <p>折扣</p>
+      <ul class="filterBox saleBox">
+        <li data-type="10" class="active">全部</li>
+        <li data-type="5">5折</li>
+        <li data-type="6">6折</li>
+        <li data-type="7">7折</li>
+        <li data-type="8">8折</li>
+        <li data-type="9">9折</li>
+      </ul>
+    </div>
+    <div class="cateBox">
+      <p>排序</p>
+      <ul class="filterBox sortBox">
+        <li data-type="id" data-method="ASC" class="active">综合 正序</li>
+        <li data-type="id" data-method="DESC">综合 倒序</li>
+        <li data-type="sale" data-method="ASC">折扣 正序</li>
+        <li data-type="sale" data-method="DESC">折扣 倒序</li>
+        <li data-type="price" data-method="ASC">价格 正序</li>
+        <li data-type="price" data-method="DESC">价格 倒序</li>
+      </ul>
+    </div>
+    <!-- 搜索框：让 label "搜索" 与第一个 label 左侧对齐即可 -->
+    <div class="cateBox">
+      <p>搜索</p>
+      <div class="searchBox">
+        <input type="text" class="search" placeholder="回车搜索商品" />
+        <button class="cancelBtn">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分页器 -->
+  <div class="pagination container">
+    <span class="first disable">首页</span>
+    <span class="prev disable">上一页</span>
+    <p class="total">1 / 1</p>
+    <span class="next">下一页</span>
+    <span class="last">末页</span>
+    <input type="number" class="jump" value="1" min="1">
+    <button class="go">跳转</button>
+    <select class="pagesize">
+      <option value="12">12</option>
+      <option value="16">16</option>
+      <option value="20">20</option>
+      <option value="24">24</option>
+    </select>
+  </div>
+
+  <!-- 商品列表 -->
+  <ul class="list container">
+    <!-- JS 动态渲染 -->
+  </ul>
+
+  <!-- 页面底部 -->
+  <footer class="footer">
+    广告位出租
+  </footer>
+
+  <script src="../js/list.js"></script>
+
+  <script>
+    // “返回首页”点击事件
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('#backHome');
+      if(btn) {
+        btn.addEventListener('click', () => {
+          location.href = 'index.html';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

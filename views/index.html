@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>仿站电商平台</title>
+  <link rel="stylesheet" href="../lib/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/uni.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <script src="../lib/axios.min.js"></script>
+  <script src="../lib/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <!-- 顶部导航 (首页不需要返回上一页按钮) -->
+  <header class="header">
+    <div class="header-title">仿站电商平台</div>
+    <div class="user-info">
+      <span id="welcome-text">您好!</span>
+      <a href="login.html" id="login-link" class="login-link">请登录</a>
+      <a href="self.html" id="user-center" class="user-center" style="display:none;">个人中心</a>
+      <button id="logout-btn" class="logout-btn" style="display:none;">退出登录</button>
+    </div>
+  </header>
+
+  <!-- 主要内容 -->
+  <div class="container">
+    <!-- “购买商品”大按钮 -->
+    <div class="title">
+      <h2><a href="list.html" class="goods-link">购买商品</a></h2>
+    </div>
+
+    <!-- 轮播图 -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../img/img1.jpg" alt="banner1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/img2.jpg" alt="banner2" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/img3.jpg" alt="banner3" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/img4.jpg" alt="banner4" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/img5.jpg" alt="banner5" />
+        </div>
+      </div>
+      <!-- 分页器 -->
+      <div class="swiper-pagination"></div>
+      <!-- 导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <script src="../js/index.js"></script>
+</body>
+</html>
