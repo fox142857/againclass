@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("用户名和密码不能为空");
       return;
     }
-
-    // 简单正则校验
     if (!/^[a-z0-9]\w{3,11}$/.test(username)) {
       alert('用户名格式不正确(需字母或数字开头, 长度4~12, 可包含下划线)');
       return;
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
       if (res.data.code === 1) {
-        // 登录成功
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("userInfo", JSON.stringify(res.data.user));
         alert("登录成功");
@@ -38,8 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert(res.data.message);
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
       alert("登录失败");
     }
   });

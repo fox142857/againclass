@@ -11,21 +11,16 @@
 </head>
 <body>
   <header class="header">
-    <!-- 返回上一页按钮 -->
     <button class="back-btn" onclick="window.history.back()"> &lt; </button>
     <h2 class="header-title">商品列表</h2>
-    <!-- 返回首页按钮 -->
     <button id="backHome">返回首页</button>
   </header>
 
-  <!-- 筛选区域：与原先类似，但只让第一个标签和搜索框左对齐即可 -->
   <div class="filter container">
-    <!-- 与之前保持同样的排列方式 -->
     <div class="cateBox">
       <p>分类</p>
       <ul class="category">
         <li class="active">全部</li>
-        <!-- 分类通过JS动态加载 -->
       </ul>
     </div>
     <div class="cateBox">
@@ -58,7 +53,6 @@
         <li data-type="price" data-method="DESC">价格 倒序</li>
       </ul>
     </div>
-    <!-- 搜索框：让 label "搜索" 与第一个 label 左侧对齐即可 -->
     <div class="cateBox">
       <p>搜索</p>
       <div class="searchBox">
@@ -68,7 +62,6 @@
     </div>
   </div>
 
-  <!-- 分页器 -->
   <div class="pagination container">
     <span class="first disable">首页</span>
     <span class="prev disable">上一页</span>
@@ -85,20 +78,14 @@
     </select>
   </div>
 
-  <!-- 商品列表 -->
-  <ul class="list container">
-    <!-- JS 动态渲染 -->
-  </ul>
+  <ul class="list container"></ul>
 
-  <!-- 页面底部 -->
   <footer class="footer">
     广告位出租
   </footer>
 
   <script src="../js/list.js"></script>
-
   <script>
-    // “返回首页”点击事件
     document.addEventListener('DOMContentLoaded', () => {
       const btn = document.querySelector('#backHome');
       if(btn) {

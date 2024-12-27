@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>商品详情 - 仿站电商平台</title>
-  <!-- 引入公共样式 & 本页样式 -->
   <link rel="stylesheet" href="../css/uni.css" />
   <link rel="stylesheet" href="../css/detail.css" />
   <script src="../lib/axios.min.js"></script>
 </head>
 <body>
   <header class="header">
-    <!-- 返回上一页按钮 -->
     <button class="back-btn" onclick="window.history.back()"> &lt; </button>
     <div class="header-title">仿站电商平台</div>
-
     <div class="user-info">
       <span id="welcome-text">您好!</span>
       <a href="login.html" id="login-link" class="login-link">请登录</a>
@@ -28,10 +25,7 @@
     <span>商品详情</span>
   </div>
 
-  <div class="goods-detail" id="goodsDetail">
-    <!-- 由JS动态插入商品详情 -->
-  </div>
-
+  <div class="goods-detail" id="goodsDetail"></div>
   <script src="../js/detail.js"></script>
 </body>
 </html>

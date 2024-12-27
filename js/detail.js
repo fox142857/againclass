@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 发请求获取商品详情
+  // 获取商品详情
   axios
     .get(`http://localhost:8888/goods/item/${goodId}`)
     .then((res) => {
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href = "list.html";
       }
     })
-    .catch((err) => {
-      console.error(err);
+    .catch(() => {
       alert("获取商品详情失败");
       location.href = "list.html";
     });
 
+  // 渲染商品信息
   function renderDetail(info) {
     const goodsDetail = document.querySelector("#goodsDetail");
     if (!goodsDetail) return;
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert(res.data.message);
         }
       })
-      .catch((err) => {
+      .catch(() => {
         alert("退出失败");
       });
   }

@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. 检查登录状态
   checkLoginStatus();
 
-  // 2. 初始化轮播图
+  // 初始化轮播图
   new Swiper(".swiper", {
     loop: true,
     autoplay: {
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 点击退出登录
+  // 退出登录
   const logoutBtn = document.querySelector("#logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", handleLogout);
@@ -76,8 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert(res.data.message);
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
       alert("退出失败");
     }
   }

@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 获取DOM
+  // 获取表单DOM元素
   const usernameInput = document.querySelector(".username");
   const ageInput = document.querySelector(".age");
   const genderSelect = document.querySelector(".gender");
   const nicknameInput = document.querySelector(".nickname");
   const formInfo = document.querySelector("#formInfo");
 
-  // 1. 获取用户信息并填充表单
+  // 获取用户信息并填充表单
   axios
     .get(`http://localhost:8888/users/info/${userInfo.id}`, {
       headers: { authorization: token },
@@ -32,13 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href = "login.html";
       }
     })
-    .catch((err) => {
-      console.error(err);
+    .catch(() => {
       alert("获取用户信息失败");
       location.href = "login.html";
     });
 
-  // 2. 提交修改个人信息
+  // 提交修改个人信息
   if (formInfo) {
     formInfo.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -55,20 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then((res) => {
           if (res.data.code === 1) {
+            // 更新 localStorage 中的昵称等信息后，再跳转到首页
+            userInfo.nickname = data.nickname;
+            userInfo.age = data.age;
+            userInfo.gender = data.gender;
+            localStorage.setItem("userInfo", JSON.stringify(userInfo));
             alert("修改个人信息成功");
             location.href = "index.html";
           } else {
             alert(res.data.message);
           }
         })
-        .catch((err) => {
-          console.error(err);
+        .catch(() => {
           alert("修改失败");
         });
     });
   }
 
-  // 3. “返回首页”按钮
+  // 返回首页按钮
   const backHomeBtn = document.querySelector("#backHomeBtn");
   if (backHomeBtn) {
     backHomeBtn.addEventListener("click", () => {
@@ -76,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 4. “修改密码”按钮 —— 跳转到 rpwd.html
+  // 修改密码按钮，跳转到 rpwd.html
   const changePwdBtn = document.querySelector("#changePwdBtn");
   if (changePwdBtn) {
     changePwdBtn.addEventListener("click", () => {

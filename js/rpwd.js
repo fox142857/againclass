@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert(res.data.message);
         }
       })
-      .catch((err) => {
-        console.error(err);
+      .catch(() => {
         alert("修改失败");
       });
   });

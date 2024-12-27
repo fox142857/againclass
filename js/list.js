@@ -1,5 +1,3 @@
-// js/list.js
-
 const BASE_URL = "http://localhost:8888/";
 
 $(function () {
@@ -9,13 +7,13 @@ $(function () {
     pagesize: 12,
     filter: "",
     saleType: 10,
-    sortType: "id",      // 默认排序类型
-    sortMethod: "ASC",   // 默认排序方式
+    sortType: "id",
+    sortMethod: "ASC",
     search: "",
     category: "",
   };
 
-  // 处理分页按钮状态
+  // 分页按钮状态处理
   function handlePage() {
     $(".first, .prev, .next, .last").removeClass("disable");
     if (query.current === 1) {
@@ -39,12 +37,12 @@ $(function () {
           alert(response.data.message);
         }
       })
-      .catch(error => {
-        console.error("获取商品列表失败:", error);
+      .catch(() => {
+        alert("获取商品列表失败");
       });
   }
 
-  // 更新商品列表
+  // 更新列表
   function updateList(list) {
     const listElement = $("ul.list");
     listElement.empty();
@@ -66,7 +64,6 @@ $(function () {
             </div>
           </li>
         `);
-        // 点击跳转详情
         li.click(function () {
           const goodsId = $(this).data("id");
           localStorage.setItem("goodId", goodsId);
@@ -79,10 +76,10 @@ $(function () {
     }
   }
 
-  // 初次获取
+  // 初次获取数据
   getList();
 
-  // 获取商品分类
+  // 获取分类
   axios.get(`${BASE_URL}goods/category`)
     .then(response => {
       if (response.data.code === 1) {
@@ -98,11 +95,11 @@ $(function () {
         });
       }
     })
-    .catch(error => {
-      console.error("获取分类失败:", error);
+    .catch(() => {
+      alert("获取分类失败");
     });
 
-  // 分页按钮事件
+  // 分页器事件
   $(".prev").click(handlePrevPage);
   $(".first").click(handleFirstPage);
   $(".last").click(handleLastPage);
@@ -115,7 +112,7 @@ $(function () {
   $("ul.filterBox.saleBox li").click(handleSaleTypeFilter);
   $("ul.filterBox.sortBox li").click(handleSortFilter);
 
-  // 搜索框：仅回车时搜索；取消按钮可重置
+  // 搜索框事件
   $(".search").on("keydown", function(e) {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -125,7 +122,6 @@ $(function () {
     }
   });
   $(".cancelBtn").click(function() {
-    // 重置搜索
     $(".search").val("");
     query.search = "";
     query.current = 1;

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const rpassword = document.getElementById("rpassword").value.trim();
     const nickname = document.getElementById("nickname").value.trim();
 
-    // 表单验证
     if (!username || !password || !rpassword || !nickname) {
       alert("所有字段都必须填写");
       return;
@@ -39,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert(res.data.message);
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
       alert("注册失败");
     }
   });

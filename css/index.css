@@ -1,12 +1,10 @@
-/* index.css */
-
-/* 主要内容容器 */
+/* 页面容器 */
 .container {
   width: 1200px;
   margin: 20px auto;
 }
 
-/* “购买商品”大按钮 */
+/* 购买商品大按钮区域 */
 .title {
   text-align: center;
   margin-bottom: 20px;
@@ -32,13 +30,13 @@
   transform: scale(1);
 }
 
-/* 轮播图：放大1.5倍，并在鼠标未进入时隐藏左右按钮 */
+/* 轮播图整体放大，并控制左右按钮只在鼠标悬浮时出现 */
 .swiper {
   width: 450px;
   height: 287px;
   margin: 20px auto;
   transform: scale(1.5);
-  transform-origin: top center; /* 放大中心点为上方 */
+  transform-origin: top center;
   position: relative;
 }
 .swiper-wrapper {
@@ -54,26 +52,21 @@
   width: 450px;
   height: 287px;
 }
-
-/* 默认隐藏左右按钮，鼠标悬浮到轮播区域才显示 */
 .swiper-button-prev,
 .swiper-button-next {
   display: none;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  /* 让箭头居中 */
   text-align: center;
   line-height: 40px;
 }
 .swiper:hover .swiper-button-prev,
 .swiper:hover .swiper-button-next {
-  display: flex; /* flex让::after可居中 */
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* Swiper按钮背景 */
 .swiper-button-prev,
 .swiper-button-next {
   background-color: rgba(0, 0, 0, 0.4);
@@ -82,11 +75,8 @@
 .swiper-button-next:after {
   font-size: 20px;
   color: #fff;
-  /* 让图标在按钮区域中间 */
   line-height: 1;
 }
-
-/* Swiper分页器 */
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;

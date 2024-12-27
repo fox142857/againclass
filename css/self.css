@@ -1,20 +1,18 @@
-/* self.css */
-
-/* 两个表单并排，减少间隙 -> 20px，添加边框阴影以增加层次感 */
+/* 两个表单并排的布局，缩小间隙并添加阴影 */
 .centerBox {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px; /* 原30px，改为20px */
+  gap: 20px;
   margin-top: 30px;
 }
 .info-box, .pwd-box {
   width: 400px;
   background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 添加或加大阴影 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* “返回首页”按钮样式优化 */
+/* 返回首页按钮样式 */
 .home-btn {
   font-size: 16px;
   cursor: pointer;

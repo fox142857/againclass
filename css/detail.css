@@ -1,5 +1,4 @@
-/* detail.css */
-
+/* 面包屑导航样式 */
 .breadcrumb {
   margin: 20px auto;
   width: 1200px;
@@ -7,13 +6,12 @@
 }
 .breadcrumb a {
   color: #666;
-  text-decoration: none;
 }
 .breadcrumb a:hover {
   color: #409eff;
 }
 
-/* 商品详情容器 */
+/* 商品详情主体布局 */
 .goods-detail {
   width: 1200px;
   margin: 20px auto;
@@ -99,7 +97,7 @@
   margin-top: 10px;
 }
 
-/* 商品详情内容 */
+/* 详情介绍内容 */
 .goods-detail-content {
   grid-column: 1 / -1;
   background: white;
